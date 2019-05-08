@@ -4,11 +4,11 @@ open class Presenter<View : ViewI> {
 
     protected var view: View? = null
 
-    fun attach(view: View) {
+    open fun attach(view: View) {
         this.view = view
     }
 
-    fun detach() {
+    open fun detach() {
         view = null
     }
 
