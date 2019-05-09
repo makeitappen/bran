@@ -1,8 +1,8 @@
 package ch.makeitappen.bran.base
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
-abstract class PresenterActivity : AppCompatActivity(), ViewI {
+abstract class PresenterFragment : Fragment(), ViewI {
 
     // subclass must set this variable
     private lateinit var presenter: Presenter<ViewI>
@@ -22,4 +22,15 @@ abstract class PresenterActivity : AppCompatActivity(), ViewI {
         super.onStop()
         presenter.detach()
     }
+
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        presenter.attach(this)
+//    }
+//
+//    override fun onDetach() {
+//        super.onDetach()
+//        presenter.detach()
+//    }
+
 }

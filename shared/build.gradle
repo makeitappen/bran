@@ -32,6 +32,8 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api 'org.jetbrains.kotlin:kotlin-stdlib-common'
+
+            implementation("io.ktor:ktor-client-core:$ktor_version")
 //            implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
 
 //            implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
@@ -44,6 +46,9 @@ kotlin {
 
         androidMain.dependencies {
             api 'org.jetbrains.kotlin:kotlin-stdlib'
+
+            implementation("io.ktor:ktor-client-android:$ktor_version")
+
 //            implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
 //            implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
@@ -54,6 +59,9 @@ kotlin {
         }
 
         iosMain.dependencies {
+
+            implementation("io.ktor:ktor-client-ios:$ktor_version")
+
 //            implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
 
 //            implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"

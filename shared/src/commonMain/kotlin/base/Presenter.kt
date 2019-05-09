@@ -1,15 +1,25 @@
-package ch.makeitappen.digipay.base
+package ch.makeitappen.bran.base
 
-open class Presenter<View : ViewI> {
+abstract class Presenter<V : ViewI> {
 
-    protected var view: View? = null
+    protected var view: V? = null
+        private set
 
-    open fun attach(view: View) {
+    fun attach(view: V) {
         this.view = view
+        onViewAttached()
     }
 
-    open fun detach() {
-        view = null
+    fun detach() {
+        this.view = null
+        onViewDetached()
     }
 
+    open fun onViewAttached() {
+
+    }
+
+    open fun onViewDetached() {
+
+    }
 }

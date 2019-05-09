@@ -1,6 +1,6 @@
 package ch.makeitappen.common.root
 
-import ch.makeitappen.digipay.base.ViewI
+import ch.makeitappen.bran.base.ViewI
 
 interface RootViewI : ViewI {
 
