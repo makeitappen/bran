@@ -1,9 +1,11 @@
 package ch.makeitappen.common.news
 
-class NewsRepository {
+class NewsRepository() {
 
-    // TODO: get it from internet, and convert it to async
+    // TODO: get RSS feed from network
+    // Accept header needs to be set to 'applicaiton/xml'
     fun newsList(): List<News> {
+
         return listOf(
             News(
                 "North Korea fires two short-range missiles, South says",

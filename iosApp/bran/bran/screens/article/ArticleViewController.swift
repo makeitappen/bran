@@ -26,7 +26,6 @@ class ArticleViewController: PresenterViewController {
     }
 }
 
-
 extension ArticleViewController: ArticleViewI {
     
     func show(news: News) {

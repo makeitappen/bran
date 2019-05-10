@@ -1,6 +1,8 @@
 package ch.makeitappen.bran.base
 
+
 abstract class Presenter<V : ViewI> {
+
 
     // needs to be nullable for iOS memory management
     protected var view: V? = null
