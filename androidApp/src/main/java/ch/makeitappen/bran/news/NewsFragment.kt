@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ch.makeitappen.bran.R
 import ch.makeitappen.bran.article.ArticleFragment
 import ch.makeitappen.bran.base.PresenterFragment
-import ch.makeitappen.common.news.News
-import ch.makeitappen.common.news.NewsPresenter
-import ch.makeitappen.common.news.NewsRepository
-import ch.makeitappen.common.news.NewsViewI
+import ch.makeitappen.common.news.*
 
 /**
  * A fragment representing a list of Items.
@@ -25,7 +22,7 @@ class NewsFragment : PresenterFragment(), NewsViewI, OnNewsItemClickListener {
 
     private var columnCount = 1
 
-    private var presenter = NewsPresenter(NewsRepository())
+    private var presenter = NewsPresenter(BBCTopNewsRepository())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

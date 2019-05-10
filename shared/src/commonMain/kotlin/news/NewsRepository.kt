@@ -1,11 +1,11 @@
 package ch.makeitappen.common.news
 
-class NewsRepository() {
+open class NewsRepository(private val rssUrl: String) {
 
-    // TODO: get RSS feed from network
-    // Accept header needs to be set to 'applicaiton/xml'
     fun newsList(): List<News> {
 
+        // TODO: get RSS feed from network
+        // Accept header needs to be set to 'applicaiton/xml'
         return listOf(
             News(
                 "North Korea fires two short-range missiles, South says",

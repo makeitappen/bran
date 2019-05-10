@@ -14,7 +14,7 @@ class NewsViewController: PresenterViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     override internal var _presenter: Presenter { return presenter }    
-    private let presenter = NewsPresenter(repository: NewsRepository())
+    private let presenter = NewsPresenter(repository: BBCTopNewsRepository())
     
     private var newsList = [News]()
     
