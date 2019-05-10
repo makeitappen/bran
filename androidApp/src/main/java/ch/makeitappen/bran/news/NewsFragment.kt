@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ch.makeitappen.bran.R
+import ch.makeitappen.bran.article.ArticleFragment
 import ch.makeitappen.bran.base.PresenterFragment
 import ch.makeitappen.common.news.News
 import ch.makeitappen.common.news.NewsPresenter
+import ch.makeitappen.common.news.NewsRepository
 import ch.makeitappen.common.news.NewsViewI
 
 /**
@@ -21,10 +23,9 @@ import ch.makeitappen.common.news.NewsViewI
  */
 class NewsFragment : PresenterFragment(), NewsViewI, OnNewsItemClickListener {
 
-    // TODO: Customize parameters
     private var columnCount = 1
 
-    private var presenter = NewsPresenter()
+    private var presenter = NewsPresenter(NewsRepository())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,18 +48,9 @@ class NewsFragment : PresenterFragment(), NewsViewI, OnNewsItemClickListener {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-//                adapter = NewsRecyclerViewAdapter(DummyContent.ITEMS, listener)
             }
         }
         return view
-    }
-
-    override fun onNewsItemClick(news: News?) {
-        news?.let { print(it.title) }
-    }
-
-    override fun show(newsList: List<News>) {
-        (view as? RecyclerView)?.adapter = NewsRecyclerViewAdapter(newsList, this)
     }
 
     override fun onAttach(context: Context) {
@@ -66,17 +58,10 @@ class NewsFragment : PresenterFragment(), NewsViewI, OnNewsItemClickListener {
         set(presenter)
     }
 
-    override fun onStart() {
-        super.onStart()
-        presenter.loadNews()
-    }
-
     companion object {
 
-        // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
 
-        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
             NewsFragment().apply {
@@ -85,4 +70,24 @@ class NewsFragment : PresenterFragment(), NewsViewI, OnNewsItemClickListener {
                 }
             }
     }
+
+    // OnNewsItemClickListener
+    override fun onNewsItemClick(news: News?) {
+        news?.let { presenter.onNewsSelected(it) }
+    }
+
+    // NewsViewI
+    override fun show(newsList: List<News>) {
+        (view as? RecyclerView)?.adapter = NewsRecyclerViewAdapter(newsList, this)
+    }
+
+    // NewsViewI
+    override fun showDetail(news: News) {
+        val articleFragment = ArticleFragment(news)
+        activity?.let {
+            it.supportFragmentManager.beginTransaction()?.replace(R.id.frameLayout, articleFragment, "ArticleFragment")
+                .addToBackStack(null).commit()
+        }
+    }
+
 }

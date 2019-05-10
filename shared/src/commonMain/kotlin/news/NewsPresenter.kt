@@ -2,11 +2,18 @@ package ch.makeitappen.common.news
 
 import ch.makeitappen.bran.base.Presenter
 
-class NewsPresenter : Presenter<NewsViewI>() {
+class NewsPresenter(private val repository: NewsRepository) : Presenter<NewsViewI>() {
 
-    private val repository = NewsRepository()
+    fun onNewsSelected(news: News) {
+        view?.showDetail(news)
+    }
 
-    fun loadNews() {
-        view?.show(repository.news())
+    private fun loadNewsList() {
+        view?.show(repository.newsList())
+    }
+
+    override fun onViewAttached() {
+        super.onViewAttached()
+        loadNewsList()
     }
 }

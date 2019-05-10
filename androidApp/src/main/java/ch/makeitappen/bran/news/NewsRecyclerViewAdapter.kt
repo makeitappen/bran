@@ -11,7 +11,6 @@ import ch.makeitappen.common.news.News
 import kotlinx.android.synthetic.main.fragment_news.view.*
 
 interface OnNewsItemClickListener {
-    // TODO: Update argument type and name
     fun onNewsItemClick(news: News?)
 }
 

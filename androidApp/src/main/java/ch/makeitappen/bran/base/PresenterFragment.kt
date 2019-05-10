@@ -23,14 +23,4 @@ abstract class PresenterFragment : Fragment(), ViewI {
         presenter.detach()
     }
 
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        presenter.attach(this)
-//    }
-//
-//    override fun onDetach() {
-//        super.onDetach()
-//        presenter.detach()
-//    }
-
 }

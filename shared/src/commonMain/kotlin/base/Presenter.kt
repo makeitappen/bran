@@ -2,12 +2,15 @@ package ch.makeitappen.bran.base
 
 abstract class Presenter<V : ViewI> {
 
+    // needs to be nullable for iOS memory management
     protected var view: V? = null
         private set
 
     fun attach(view: V) {
-        this.view = view
-        onViewAttached()
+        if (this.view != view) {
+            this.view = view
+            onViewAttached()
+        }
     }
 
     fun detach() {

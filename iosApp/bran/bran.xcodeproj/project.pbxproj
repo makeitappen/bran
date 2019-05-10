@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5445CF38228567A8004E5DEF /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5445CF37228567A8004E5DEF /* News.storyboard */; };
+		5445CF3A228567CF004E5DEF /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF39228567CF004E5DEF /* NewsViewController.swift */; };
+		5445CF3D228570AC004E5DEF /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5445CF3C228570AC004E5DEF /* ArticleViewController.swift */; };
+		5445CF3F228570B7004E5DEF /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5445CF3E228570B7004E5DEF /* Article.storyboard */; };
+		5445CF42228577C0004E5DEF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5445CF41228577C0004E5DEF /* WebKit.framework */; };
 		54D8A6AC2282F8B0006224F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8A6AB2282F8B0006224F2 /* AppDelegate.swift */; };
 		54D8A6B32282F8B3006224F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D8A6B22282F8B3006224F2 /* Assets.xcassets */; };
 		54D8A6B62282F8B3006224F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D8A6B42282F8B3006224F2 /* LaunchScreen.storyboard */; };
@@ -52,6 +57,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5445CF37228567A8004E5DEF /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		5445CF39228567CF004E5DEF /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5445CF3C228570AC004E5DEF /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		5445CF3E228570B7004E5DEF /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
+		5445CF41228577C0004E5DEF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		54D8A6A82282F8B0006224F2 /* bran.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bran.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D8A6AB2282F8B0006224F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D8A6B22282F8B3006224F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5445CF42228577C0004E5DEF /* WebKit.framework in Frameworks */,
 				54D8A6DB2282FB06006224F2 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +107,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5445CF3522856783004E5DEF /* news */ = {
+			isa = PBXGroup;
+			children = (
+				5445CF37228567A8004E5DEF /* News.storyboard */,
+				5445CF39228567CF004E5DEF /* NewsViewController.swift */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		5445CF362285678D004E5DEF /* article */ = {
+			isa = PBXGroup;
+			children = (
+				5445CF3C228570AC004E5DEF /* ArticleViewController.swift */,
+				5445CF3E228570B7004E5DEF /* Article.storyboard */,
+			);
+			path = article;
+			sourceTree = "<group>";
+		};
+		5445CF3B228569B7004E5DEF /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				5445CF362285678D004E5DEF /* article */,
+				5445CF3522856783004E5DEF /* news */,
+				54D8A6DE22830CAA006224F2 /* root */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		5445CF40228577BF004E5DEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5445CF41228577C0004E5DEF /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		54D8A69F2282F8B0006224F2 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +151,7 @@
 				54D8A6BF2282F8B3006224F2 /* branTests */,
 				54D8A6CA2282F8B3006224F2 /* branUITests */,
 				54D8A6A92282F8B0006224F2 /* Products */,
+				5445CF40228577BF004E5DEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,9 +168,9 @@
 		54D8A6AA2282F8B0006224F2 /* bran */ = {
 			isa = PBXGroup;
 			children = (
-				54D8A6E42283268F006224F2 /* utilities */,
 				54D8A6DF22832463006224F2 /* base */,
-				54D8A6DE22830CAA006224F2 /* root */,
+				54D8A6E42283268F006224F2 /* utilities */,
+				5445CF3B228569B7004E5DEF /* screens */,
 				54D8A6AB2282F8B0006224F2 /* AppDelegate.swift */,
 				54D8A6B22282F8B3006224F2 /* Assets.xcassets */,
 				54D8A6B42282F8B3006224F2 /* LaunchScreen.storyboard */,
@@ -283,6 +331,8 @@
 				54D8A6B62282F8B3006224F2 /* LaunchScreen.storyboard in Resources */,
 				54D8A6B32282F8B3006224F2 /* Assets.xcassets in Resources */,
 				54D8A6E822832812006224F2 /* Root.storyboard in Resources */,
+				5445CF3F228570B7004E5DEF /* Article.storyboard in Resources */,
+				5445CF38228567A8004E5DEF /* News.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +378,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D8A6E6228326A9006224F2 /* Extensions.swift in Sources */,
+				5445CF3D228570AC004E5DEF /* ArticleViewController.swift in Sources */,
 				54D8A6E122832471006224F2 /* PresenterViewController.swift in Sources */,
 				54D8A6E322832571006224F2 /* RootViewController.swift in Sources */,
+				5445CF3A228567CF004E5DEF /* NewsViewController.swift in Sources */,
 				54D8A6AC2282F8B0006224F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
