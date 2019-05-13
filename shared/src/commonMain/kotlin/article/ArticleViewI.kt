@@ -5,4 +5,6 @@ import ch.makeitappen.common.news.News
 
 interface ArticleViewI : ViewI {
     fun show(news: News)
+
+    fun stopLoading(news: News)
 }

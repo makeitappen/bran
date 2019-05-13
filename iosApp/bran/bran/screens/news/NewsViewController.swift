@@ -46,7 +46,6 @@ extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let news = newsList[indexPath.row]
         presenter.onNewsSelected(news: news)
-        
     }
 }
 
@@ -58,8 +57,7 @@ extension NewsViewController: NewsViewI {
     }
     
     func showDetail(news: News) {
-        let articleViewController: ArticleViewController = "Article".instantiateInitialViewController()
-        articleViewController.news = news
+        let articleViewController = ArticleBuilder.instantiateViewController(news: news)
         navigationController?.show(articleViewController, sender: nil)
     }
 }

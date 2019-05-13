@@ -19,7 +19,7 @@ class RootViewController: PresenterTabBarViewController {
         // Do any additional setup after loading the view.
         //        set(presenter: presenter)
         
-        let newsViewController = "News".instantiateInitialViewController()
+        let newsViewController: NewsViewController = UIStoryboard(name: "News").instantiateInitialViewController()
         let navigationController = UINavigationController(rootViewController: newsViewController)
         navigationController.tabBarItem = UITabBarItem(title: "News", image: nil, tag: 0)
         viewControllers = [navigationController]

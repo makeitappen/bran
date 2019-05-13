@@ -46,8 +46,11 @@ class ArticleFragment(private val news: News) : PresenterFragment(), ArticleView
 
     // ArticleViewI
     override fun show(news: News) {
-
         webView.loadUrl(news.link)
+    }
+
+    override fun stopLoading(news: News) {
+        webView.stopLoading()
     }
 
 }

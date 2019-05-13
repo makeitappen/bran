@@ -9,8 +9,18 @@ class ArticlePresenter(private val articleRepository: ArticleRepository) : Prese
         loadNews()
     }
 
+    override fun onViewDetached() {
+        super.onViewDetached()
+        stopLoadingNews()
+    }
+
     private fun loadNews() {
         view?.show(articleRepository.news)
     }
+
+    private fun stopLoadingNews() {
+        view?.stopLoading(articleRepository.news)
+    }
+
 
 }

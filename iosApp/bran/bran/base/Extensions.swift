@@ -8,9 +8,13 @@
 
 import UIKit
 
-extension String {
+extension UIStoryboard {
+    
+    convenience init(name: String) {
+        self.init(name: name, bundle: nil)
+    }
     
     func instantiateInitialViewController<T: UIViewController>() -> T {
-        return UIStoryboard(name: self, bundle: nil).instantiateInitialViewController() as! T
-    }
+        return self.instantiateInitialViewController() as! T
+    }    
 }

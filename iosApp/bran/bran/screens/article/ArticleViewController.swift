@@ -13,8 +13,7 @@ import WebKit
 class ArticleViewController: PresenterViewController {
     
     override internal var _presenter: Presenter { return presenter }
-    private lazy var presenter = ArticlePresenter(articleRepository: ArticleRepository(news: news))
-    var news: News!
+    var presenter: ArticlePresenter!
     
     @IBOutlet private weak var webView: WKWebView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -33,6 +32,10 @@ extension ArticleViewController: ArticleViewI {
             let request = URLRequest(url: url)
             webView.load(request)
         }
+    }
+    
+    func stopLoading(news: News) {
+        webView.stopLoading()
     }
 }
 
